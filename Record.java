@@ -1,3 +1,6 @@
+/**
+ * Represents one line of data in the CSV file.
+ */
 public class Record {
 
     private String wikiTopic;

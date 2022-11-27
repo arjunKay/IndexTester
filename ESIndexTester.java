@@ -30,17 +30,20 @@ public class ESIndexTester extends Metered {
         restClient = RestClient.builder(
                 new HttpHost("localhost", 9200)
         ).build();
-
         transport = new RestClientTransport(restClient, new JacksonJsonpMapper());
 
         try {
+
+            // initialize the client
             client = new ElasticsearchClient(transport);
 
+            // settings JSON string
             String settings = "{\"index\": {\n" +
                     "        \"number_of_replicas\": \"0\",\n" +
                     "        \"number_of_shards\": \"1\"\n" +
                     "      }}";
 
+            // create the index
             CreateIndexRequest request = CreateIndexRequest.of( r ->
                     r.index(INDEX_NAME)
                             .settings(b -> b.withJson( new StringReader(settings)))
