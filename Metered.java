@@ -1,14 +1,24 @@
+import java.util.ArrayList;
+import java.util.List;
+
 public abstract class Metered {
 
     private String name;
+    private List<String> queryKeywords;
+
     public Metered(String name) {
 
         // name of the database being tested - all lowercase preferred
         this.name = name;
+        this.queryKeywords = new ArrayList<>();
     }
 
-    public void setQueryData(QuerySet querySet) {
-            // TODO: yet to figure out this one
+    public void setQueryKeywords(List<String> keywords) {
+            this.queryKeywords = keywords;
+    }
+
+    public List<String> getQueryKeywords() {
+        return queryKeywords;
     }
 
     public String getName() {
@@ -37,7 +47,7 @@ public abstract class Metered {
      * @param querySet
      * @return
      */
-    public abstract Statistics query(QuerySet querySet);
+    public abstract QueryResult query();
 
     /**
      * Closes/shutdown all database connections and clients.

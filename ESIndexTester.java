@@ -10,6 +10,7 @@ import org.elasticsearch.client.RestClient;
 
 import java.io.IOException;
 import java.io.StringReader;
+import java.util.List;
 
 public class ESIndexTester extends Metered {
 
@@ -78,14 +79,13 @@ public class ESIndexTester extends Metered {
     }
 
     @Override
-    public Statistics query(QuerySet querySet) {
+    public QueryResult query() {
         return null;
     }
 
     @Override
     public void teardown() {
         try {
-
             restClient.close();
             transport.close();
             client.shutdown();

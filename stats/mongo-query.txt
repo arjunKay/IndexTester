@@ -1,0 +1,5 @@
+CONTROLLED_100: query: savingprivateryan |  time: 0 | result size: 1000000
+RANDOM_1: query: considered |  time: 3 | result size: 7680
+CONTROLLED_75: query: thelordoftheringsthetwotowers |  time: 0 | result size: 749351
+CONTROLLED_0: query: piratesofthecaribbeanthecurseoftheblackpearl |  time: 0 | result size: 0
+CONTROLLED_25: query: indianajonesanddtheraidersofthelostark |  time: 0 | result size: 250380
